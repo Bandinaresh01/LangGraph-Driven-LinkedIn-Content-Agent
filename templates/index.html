@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generated Post</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2e;
+      --card2:#0f1730;
+      --text:#e8eefc;
+      --muted:#a9b4d0;
+      --line:#223055;
+      --accent:#6ea8fe;
+      --accent2:#7ee787;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: var(--sans);
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(110,168,254,.20), transparent 60%),
+                  radial-gradient(900px 700px at 80% 20%, rgba(126,231,135,.14), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      min-height:100vh;
+      padding: 28px 16px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{
+      width:min(1100px, 100%);
+      display:grid;
+      gap: 16px;
+    }
+    .topbar{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      padding: 18px 20px;
+      background: rgba(17,26,46,.75);
+      border: 1px solid rgba(34,48,85,.8);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .topbar h1{
+      margin:0;
+      font-size: 20px;
+      letter-spacing:.2px;
+    }
+    .topbar p{
+      margin:6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.45;
+      max-width: 720px;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 0 14px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(110,168,254,.55);
+      background: linear-gradient(180deg, rgba(110,168,254,.32), rgba(110,168,254,.18));
+      color: var(--text);
+      cursor:pointer;
+      font-weight: 600;
+      font-size: 13px;
+      transition: .2s transform, .2s opacity;
+      text-decoration:none;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn.secondary{
+      border-color: rgba(34,48,85,.9);
+      background: rgba(15,23,48,.75);
+      color: var(--muted);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    .card{
+      background: rgba(17,26,46,.75);
+      border: 1px solid rgba(34,48,85,.8);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .cardhead{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(34,48,85,.75);
+      background: rgba(15,23,48,.65);
+    }
+    .cardhead h2{
+      margin:0;
+      font-size: 14px;
+      letter-spacing:.2px;
+    }
+    .meta{
+      color: var(--muted);
+      font-size: 12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      white-space:nowrap;
+    }
+    .pill{
+      border: 1px solid rgba(34,48,85,.9);
+      background: rgba(15,23,48,.55);
+      border-radius: 999px;
+      padding: 5px 9px;
+    }
+    .body{
+      padding: 14px 16px;
+    }
+    .content{
+      background: rgba(11,18,32,.35);
+      border: 1px solid rgba(34,48,85,.75);
+      border-radius: 14px;
+      padding: 12px 12px;
+      color: rgba(232,238,252,.95);
+      font-size: 14px;
+      line-height:1.6;
+      white-space: pre-wrap; /* keeps line breaks */
+      min-height: 220px;
+    }
+    .tools{
+      margin-top: 12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(17,26,46,.92);
+      border: 1px solid rgba(34,48,85,.9);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      display:none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div class="toast" id="toast">Copied!</div>
+
+  <main class="wrap">
+    <section class="topbar">
+      <div>
+        <h1>LinkedIn Caption Results</h1>
+        <p>Left is the generated caption. Right is the improved/reviewed output. Use copy buttons to paste into LinkedIn.</p>
+      </div>
+      <div class="actions">
+        <a class="btn secondary" href="/">← Generate another</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <!-- Generated Post -->
+      <article class="card">
+        <div class="cardhead">
+          <h2>Generated Post</h2>
+          <div class="meta">
+            <span class="pill"><span id="count1">0</span> chars</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="content" id="content1">{{ content1 }}</div>
+          <div class="tools">
+            <button class="btn" type="button" onclick="copyText('content1')">Copy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Reviewed / Improved Post -->
+      <article class="card">
+        <div class="cardhead">
+          <h2>Reviewed / Improved Post</h2>
+          <div class="meta">
+            <span class="pill"><span id="count2">0</span> chars</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="content" id="content2">{{ content2 }}</div>
+          <div class="tools">
+            <button class="btn" type="button" onclick="copyText('content2')">Copy</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const toast = document.getElementById("toast");
+
+    function showToast(msg){
+      toast.textContent = msg;
+      toast.style.display = "block";
+      setTimeout(() => toast.style.display = "none", 1200);
+    }
+
+    async function copyText(id){
+      const el = document.getElementById(id);
+      const text = el ? el.innerText : "";
+      try{
+        await navigator.clipboard.writeText(text);
+        showToast("Copied to clipboard ✅");
+      }catch(e){
+        // fallback
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        showToast("Copied ✅");
+      }
+    }
+
+    // character counts
+    function updateCounts(){
+      const c1 = document.getElementById("content1")?.innerText || "";
+      const c2 = document.getElementById("content2")?.innerText || "";
+      document.getElementById("count1").textContent = c1.length;
+      document.getElementById("count2").textContent = c2.length;
+    }
+    updateCounts();
+  </script>
+</body>
+</html>
